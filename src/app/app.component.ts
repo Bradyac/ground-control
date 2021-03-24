@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import FakeLaunchData from '../assets/fake-launch-data.json';
 
 @Component({
   selector: 'app-root',
@@ -11,16 +12,17 @@ export class AppComponent implements OnInit {
   list = [];
 
   ngOnInit(): void {
-    this.getUpcomingLaunchData();
+    // this.getUpcomingLaunchData();
+    this.setUpcomingLaunchData(FakeLaunchData);
   }
 
-  getUpcomingLaunchData() {
-    fetch('https://lldev.thespacedevs.com/2.0.0/launch/upcoming/?format=json')
-      .then((response) => response.json())
-      .then((data) => {
-        this.setUpcomingLaunchData(data);
-      });
-  }
+  // getUpcomingLaunchData() {
+  //   fetch('https://lldev.thespacedevs.com/2.0.0/launch/upcoming/?format=json')
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       this.setUpcomingLaunchData(data);
+  //     });
+  // }
 
   setUpcomingLaunchData(data) {
     this.UpcomingLaunchData = data;
