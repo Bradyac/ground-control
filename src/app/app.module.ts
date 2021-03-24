@@ -7,16 +7,9 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { LaunchCardComponent } from './components/launch-card/launch-card.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    NavBarComponent,
-    LaunchCardComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  declarations: [AppComponent, NavBarComponent, LaunchCardComponent],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

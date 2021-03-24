@@ -20,6 +20,10 @@
   width: 400px;
 }
 
+.card:last-child {
+  margin-bottom: 30px;
+}
+
 .image {
   height: 300px;
   width: 100%;
