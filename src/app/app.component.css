@@ -1,0 +1,13 @@
+.header-text {
+  margin-top: 15px;
+  text-align: center;
+  color: #fff;
+  font-size: 32px;
+  font-weight: 300;
+}
+
+@media (min-width: 550px) {
+  .header-text {
+    font-size: 42px;
+  }
+}

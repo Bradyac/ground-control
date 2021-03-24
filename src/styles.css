@@ -1,1 +1,55 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap");
+:root {
+  --primary-color: #01294f;
+  --secondary-color: #0360ba;
+  --dark-color: #002240;
+  --light-color: #f4f4f4;
+  --success-color: #5cb85c;
+  --error-color: #d9534f;
+  --warning-color: #e77218;
+  --default-color: grey;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+html {
+  padding: 0 30px;
+  height: 100%;
+  /* background by SVGBackgrounds.com */
+  background-color: #01294f;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1500 800'%3E%3Cg %3E%3Cpolygon fill='%2301396f' points='1600 160 0 460 0 350 1600 50'/%3E%3Cpolygon fill='%23024a8e' points='1600 260 0 560 0 450 1600 150'/%3E%3Cpolygon fill='%23035aae' points='1600 360 0 660 0 550 1600 250'/%3E%3Cpolygon fill='%23036ace' points='1600 460 0 760 0 650 1600 350'/%3E%3Cpolygon fill='%23047aed' points='1600 800 0 800 0 750 1600 450'/%3E%3C/g%3E%3C/svg%3E");
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Utilities */
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  /* padding: 0 40px; */
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}

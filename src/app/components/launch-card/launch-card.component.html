@@ -1,0 +1,24 @@
+<section class="launch flex">
+    <div class="card">
+        <div class="image" [ngStyle]="{'background-image': 'url(' + image +
+            ')'}" style="background-position: center; background-size: cover;"></div>
+        <div class="text-container">
+            <div class="pill" [ngStyle]="{'background-color': 'var(' +
+                statusColor + ')'}" alt="launch status">{{ status }}</div>
+            <h1 class="launch-title">{{ name }}</h1>
+            <h2 class="launch-date">{{ date }}</h2>
+            <h1 class="countdown">T- 04 : 11 : 03 : 25</h1>
+            <div class="launch-button-row">
+                <a href="#">
+                    <button type="button" class="btn">Watch</button>
+                </a>
+                <a href="#">
+                    <button type="button" class="btn">More Info</button>
+                </a>
+                <a href="#">
+                    <button type="button" class="btn">Share</button>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
