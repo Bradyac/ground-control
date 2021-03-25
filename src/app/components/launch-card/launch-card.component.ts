@@ -9,6 +9,7 @@ export class LaunchCardComponent implements OnInit {
   @Input() data: any;
   name: string;
   image: string;
+  launchDate: Date;
   date: string;
   status: string;
   statusColor: string;
@@ -24,13 +25,14 @@ export class LaunchCardComponent implements OnInit {
       this.image = this.data.image
         ? this.data.image
         : 'https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/launch_images/falcon2520925_image_20210314085034.png';
-      let launchDate = new Date(this.data.net);
-      this.date = launchDate.toLocaleString();
+      this.launchDate = new Date(this.data.net);
+      this.date = this.launchDate.toLocaleString();
       this.assignStatus(this.data.status.id);
     }
   }
 
   assignStatus(status) {
+    console.log(status);
     switch (status) {
       case 1:
         this.status = 'GO';
@@ -43,6 +45,10 @@ export class LaunchCardComponent implements OnInit {
       case 3:
         this.status = 'SUCCESS';
         this.statusColor = '--success-color';
+        break;
+      case 6:
+        this.status = 'IN FLIGHT';
+        this.statusColor = '--secondary-color';
         break;
       default:
         this.status = 'N/A';

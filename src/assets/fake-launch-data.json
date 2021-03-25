@@ -10,8 +10,8 @@
       "slug": "falcon-9-block-5-starlink-22",
       "name": "Falcon 9 Block 5 | Starlink 22",
       "status": {
-        "id": 1,
-        "name": "Go"
+        "id": 3,
+        "name": "Success"
       },
       "net": "2021-03-24T08:28:00Z",
       "window_end": "2021-03-24T08:28:00Z",
@@ -70,13 +70,13 @@
           "name": "Cape Canaveral, FL, USA",
           "country_code": "USA",
           "map_image": "https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/launch_images/location_12_20200803142519.jpg",
-          "total_launch_count": 213,
+          "total_launch_count": 214,
           "total_landing_count": 20
         },
         "map_image": "https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/launch_images/pad_80_20200803143323.jpg",
-        "total_launch_count": 68
+        "total_launch_count": 69
       },
-      "webcast_live": false,
+      "webcast_live": true,
       "image": "https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/launch_images/falcon2520925_image_20210314085034.png",
       "infographic": "https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/launch_images/falcon2520925_infographic_20210323233023.jpeg",
       "program": []
@@ -88,8 +88,8 @@
       "slug": "soyuz-21bfregat-m-oneweb-5",
       "name": "Soyuz 2.1b/Fregat-M | OneWeb 5",
       "status": {
-        "id": 1,
-        "name": "Go"
+        "id": 6,
+        "name": "In Flight"
       },
       "net": "2021-03-25T02:47:00Z",
       "window_end": "2021-03-25T02:47:00Z",
@@ -154,8 +154,8 @@
         "map_image": "https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/launch_images/pad_83_20200803143544.jpg",
         "total_launch_count": 6
       },
-      "webcast_live": false,
-      "image": "https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/launcher_images/soyuz25202.1b_image_20190520165337.jpg",
+      "webcast_live": true,
+      "image": "https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/launch_images/soyuz25202.1b_image_20210324065550.jpeg",
       "infographic": null,
       "program": []
     },

@@ -1,6 +1,6 @@
 .launch {
   flex-wrap: wrap;
-  margin-top: 30px;
+  margin-top: 15px;
 }
 
 .card {
@@ -41,6 +41,7 @@
   border-radius: 15px;
   margin-right: auto;
   padding: 0 10px;
+  box-shadow: 0 6px 9px rgba(0, 0, 0, 0.1);
 }
 
 .launch-title {
@@ -51,6 +52,7 @@
   background-color: rgba(255, 255, 255, 0.5);
   color: #353535;
   border-radius: 15px;
+  box-shadow: 0 6px 9px rgba(0, 0, 0, 0.1);
 }
 
 .launch-date {
@@ -84,6 +86,7 @@ button {
   font-weight: 300;
   user-select: none;
   -webkit-user-select: none;
+  box-shadow: 0 6px 9px rgba(0, 0, 0, 0.1);
 }
 
 button:hover {
