@@ -34,6 +34,8 @@ export class CountdownTimerComponent {
         (timeDifference % (1000 * 60 * 60)) / (1000 * 60)
       );
       this.seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+    } else {
+      clearInterval(this.interval);
     }
   }
 }
