@@ -8,7 +8,12 @@ import { LaunchCardComponent } from './components/launch-card/launch-card.compon
 import { CountdownTimerComponent } from './components/countdown-timer/countdown-timer.component';
 
 @NgModule({
-  declarations: [AppComponent, NavBarComponent, LaunchCardComponent, CountdownTimerComponent],
+  declarations: [
+    AppComponent,
+    NavBarComponent,
+    LaunchCardComponent,
+    CountdownTimerComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],

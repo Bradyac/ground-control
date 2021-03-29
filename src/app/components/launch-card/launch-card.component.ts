@@ -1,11 +1,11 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-launch-card',
   templateUrl: './launch-card.component.html',
   styleUrls: ['./launch-card.component.css'],
 })
-export class LaunchCardComponent implements OnInit {
+export class LaunchCardComponent {
   @Input() data: any;
   name: string;
   image: string;
@@ -14,13 +14,8 @@ export class LaunchCardComponent implements OnInit {
   status: string;
   statusColor: string;
 
-  constructor() {}
-
-  ngOnInit(): void {}
-
   ngOnChanges() {
     if (this.data) {
-      // console.log(this.data);
       this.name = this.data.name;
       this.image = this.data.image
         ? this.data.image
@@ -32,7 +27,6 @@ export class LaunchCardComponent implements OnInit {
   }
 
   assignStatus(status) {
-    console.log(status);
     switch (status) {
       case 1:
         this.status = 'GO';

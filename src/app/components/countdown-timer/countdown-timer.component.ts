@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-countdown-timer',
@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class CountdownTimerComponent {
   @Input() launchDate: Date;
-  interval;
+  interval: NodeJS.Timeout;
   days: number = 0;
   hours: number = 0;
   minutes: number = 0;
