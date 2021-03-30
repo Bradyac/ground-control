@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { LaunchCardComponent } from './components/launch-card/launch-card.component';
 import { CountdownTimerComponent } from './components/countdown-timer/countdown-timer.component';
+import { HomePageComponent } from './pages/home-page/home-page.component';
+import { UpcomingLaunchesPageComponent } from './pages/upcoming-launches-page/upcoming-launches-page.component';
+import { AboutPageComponent } from './pages/about-page/about-page.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +16,9 @@ import { CountdownTimerComponent } from './components/countdown-timer/countdown-
     NavBarComponent,
     LaunchCardComponent,
     CountdownTimerComponent,
+    HomePageComponent,
+    UpcomingLaunchesPageComponent,
+    AboutPageComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import FakeLaunchData from '../assets/fake-launch-data.json';
 
 @Component({
   selector: 'app-root',
@@ -7,27 +6,7 @@ import FakeLaunchData from '../assets/fake-launch-data.json';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  title = 'ground-control';
-  UpcomingLaunchData: any;
-  list = [];
+  constructor() {}
 
-  ngOnInit(): void {
-    // this.getUpcomingLaunchData();
-    this.setUpcomingLaunchData(FakeLaunchData);
-  }
-
-  // getUpcomingLaunchData() {
-  //   fetch('https://lldev.thespacedevs.com/2.0.0/launch/upcoming/?format=json')
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       this.setUpcomingLaunchData(data);
-  //     });
-  // }
-
-  setUpcomingLaunchData(data) {
-    this.UpcomingLaunchData = data;
-    this.UpcomingLaunchData.results.forEach((element) => {
-      this.list.push(element);
-    });
-  }
+  ngOnInit(): void {}
 }
