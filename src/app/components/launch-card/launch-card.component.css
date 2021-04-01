@@ -7,11 +7,11 @@
   background: #fff;
   background: linear-gradient(
     to right bottom,
-    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.5),
     rgba(255, 255, 255, 0.3)
   );
-  backdrop-filter: blur(0.1rem);
-  -webkit-backdrop-filter: blur(0.1rem);
+  backdrop-filter: blur(0.2rem);
+  -webkit-backdrop-filter: blur(0.2rem);
   display: flex;
   flex-direction: column;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.45);
