@@ -1,0 +1,165 @@
+/* About */
+.about {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-site-section,
+.about-me-image,
+.about-me-content,
+.about-sources-section {
+  color: #fff;
+  background: #fff;
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 0.3)
+  );
+  backdrop-filter: blur(0.2rem);
+  -webkit-backdrop-filter: blur(0.2rem);
+  border-radius: 30px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.45);
+}
+
+.about button {
+  display: inline-block;
+  margin: 15px;
+  padding: 10px;
+  width: 100%;
+  cursor: pointer;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 15px;
+  font-size: 1rem;
+  font-weight: 300;
+  user-select: none;
+  -webkit-user-select: none;
+  box-shadow: 0 6px 9px rgba(0, 0, 0, 0.1);
+}
+
+.sub-title {
+  font-size: 30px;
+  font-weight: 400;
+}
+
+/* About Site */
+.about-site-section {
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+  margin-top: 15px;
+  padding: 30px;
+}
+
+.horizontal-content-container {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  column-gap: 30px;
+  margin-top: 15px;
+  padding: 30px;
+  border-radius: 15px;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.horizontal-content-container img {
+  height: 200px;
+}
+
+/* About Data Sources */
+.about-sources-section {
+  margin-top: 30px;
+  padding: 30px;
+}
+
+.sources-card-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 30px;
+}
+
+.source-title-card,
+.source-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  border-radius: 30px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.source-card {
+  background-color: rgba(0, 0, 0, 0.2);
+  color: #fff;
+}
+
+.source-title-card img,
+.source-card img {
+  height: 175px;
+}
+
+.source-card-header {
+  font-size: 28px;
+}
+
+/* About Me */
+
+.about-me-section {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  column-gap: 30px;
+  margin-top: 30px;
+}
+
+.about-me-image {
+  height: 350px;
+  background-image: url("src/assets/images/brady.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.about-me-content {
+  padding: 30px;
+}
+
+@media (max-width: 768px) {
+  * {
+    text-align: center;
+  }
+
+  .about-site-section,
+  .sources-card-container,
+  .horizontal-content-container,
+  .about-me-section {
+    row-gap: 15px;
+  }
+
+  .sources-card-container,
+  .horizontal-content-container,
+  .about-me-section {
+    grid-template-columns: 1fr;
+  }
+
+  .horizontal-content-container img {
+    justify-self: center;
+  }
+
+  .about-me-image {
+    order: 2;
+  }
+
+  .about-me-content {
+    order: 1;
+  }
+}
+
+@media (max-width: 500px) {
+  .horizontal-content-container img,
+  .source-title-card img,
+  .source-card img {
+    height: 150px;
+  }
+}

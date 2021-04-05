@@ -40,6 +40,9 @@ export class LaunchCardComponent {
         this.status = 'SUCCESS';
         this.statusColor = '--success-color';
         break;
+      case 4:
+        this.status = 'FAIL';
+        this.statusColor = '--error-color';
       case 6:
         this.status = 'IN FLIGHT';
         this.statusColor = '--secondary-color';
