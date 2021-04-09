@@ -20,30 +20,30 @@ export class LaunchCardComponent {
       this.image = this.data.image
         ? this.data.image
         : 'https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/launch_images/falcon2520925_image_20210314085034.png';
-      this.launchDate = new Date(this.data.net);
+      this.launchDate = new Date(this.data.date);
       this.date = this.launchDate.toLocaleString();
-      this.assignStatus(this.data.status.id);
+      this.assignStatus(this.data.status);
     }
   }
 
   assignStatus(status) {
     switch (status) {
-      case 1:
+      case 'GO':
         this.status = 'GO';
         this.statusColor = '--success-color';
         break;
-      case 2:
+      case 'TBD':
         this.status = 'TBD';
         this.statusColor = '--warning-color';
         break;
-      case 3:
+      case 'SUCCESS':
         this.status = 'SUCCESS';
         this.statusColor = '--success-color';
         break;
-      case 4:
+      case 'FAIL':
         this.status = 'FAIL';
         this.statusColor = '--error-color';
-      case 6:
+      case 'IN FLIGHT':
         this.status = 'IN FLIGHT';
         this.statusColor = '--secondary-color';
         break;

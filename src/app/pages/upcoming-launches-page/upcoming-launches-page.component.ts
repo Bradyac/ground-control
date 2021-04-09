@@ -12,22 +12,22 @@ export class UpcomingLaunchesPageComponent implements OnInit {
   list = [];
 
   ngOnInit(): void {
-    // this.getUpcomingLaunchData();
-    this.setUpcomingLaunchData(FakeLaunchData);
+    this.getUpcomingLaunchData();
+    // this.setUpcomingLaunchData(FakeLaunchData);
   }
 
-  // getUpcomingLaunchData() {
-  //   fetch('https://lldev.thespacedevs.com/2.0.0/launch/upcoming/?format=json')
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       this.setUpcomingLaunchData(data);
-  //     });
-  // }
+  getUpcomingLaunchData() {
+    fetch('https://ground-control.netlify.app/.netlify/functions/launches')
+      .then((response) => response.json())
+      .then((data) => {
+        this.setUpcomingLaunchData(data);
+      });
+  }
 
   setUpcomingLaunchData(data) {
     this.UpcomingLaunchData = data;
-    this.UpcomingLaunchData.results.forEach((element) => {
-      this.list.push(element);
+    this.UpcomingLaunchData.results.forEach((launch) => {
+      this.list.push(launch);
     });
   }
 }
