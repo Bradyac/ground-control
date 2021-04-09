@@ -12,8 +12,18 @@ export class UpcomingLaunchesPageComponent implements OnInit {
   list = [];
 
   ngOnInit(): void {
+    var temp = this.getFakeData();
+    console.log(temp);
     this.getUpcomingLaunchData();
     // this.setUpcomingLaunchData(FakeLaunchData);
+  }
+
+  getFakeData() {
+    fetch('https://ground-control.netlify.app/.netlify/functions/launches')
+      .then((response) => response.json())
+      .then((data) => {
+        this.setUpcomingLaunchData(data);
+      });
   }
 
   getUpcomingLaunchData() {
