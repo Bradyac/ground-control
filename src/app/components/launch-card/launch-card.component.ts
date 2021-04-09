@@ -20,9 +20,9 @@ export class LaunchCardComponent {
       this.image = this.data.image
         ? this.data.image
         : 'https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/launch_images/falcon2520925_image_20210314085034.png';
-      this.launchDate = new Date(this.data.net);
+      this.launchDate = new Date(this.data.date);
       this.date = this.launchDate.toLocaleString();
-      this.assignStatus(this.data.status.id);
+      this.assignStatus(this.data.status);
     }
   }
 

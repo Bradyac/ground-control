@@ -6,10 +6,14 @@ const UpcomingLaunchSchema = mongoose.Schema({
     required: true,
   },
   status: {
-    type: String,
+    type: Number,
     required: true,
   },
   date: {
+    type: String,
+    required: true,
+  },
+  imageLink: {
     type: String,
     required: true,
   },
