@@ -1,6 +1,6 @@
-const mongoose = require("mongoose");
+import { Schema, model } from "mongoose";
 
-const UpcomingLaunchSchema = mongoose.Schema({
+const UpcomingLaunchSchema = Schema({
   name: {
     type: String,
     required: true,
@@ -15,4 +15,4 @@ const UpcomingLaunchSchema = mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model("UpcomingLaunches", UpcomingLaunchSchema);
+export default model("UpcomingLaunches", UpcomingLaunchSchema);

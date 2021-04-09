@@ -1,6 +1,6 @@
-const UpcomingLaunch = require("./UpcomingLaunch");
-const express = require("express");
-const router = express.Router();
+import UpcomingLaunch from "./UpcomingLaunch";
+import { Router } from "express";
+const router = Router();
 
 // Get all upcoming launches
 router.get("/", (req, res) => {
@@ -20,4 +20,4 @@ router.get("/", (req, res) => {
   });
 });
 
-module.exports = router;
+export default router;
