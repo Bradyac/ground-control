@@ -4,6 +4,13 @@ const router = express.Router();
 
 // Get all upcoming launches
 router.get("/", (req, res) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Methods", "GET");
+  res.setHeader(
+    "Access-Control-Allow-Headers",
+    "X-Requested-With,content-type"
+  );
+  res.setHeader("Access-Control-Allow-Credentials", true);
   UpcomingLaunch.find({}, (err, results) => {
     if (err) {
       res.status(400).json({
