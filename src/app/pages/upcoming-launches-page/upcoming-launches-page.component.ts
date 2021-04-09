@@ -16,8 +16,10 @@ export class UpcomingLaunchesPageComponent implements OnInit {
     // this.setUpcomingLaunchData(FakeLaunchData);
   }
 
-  getUpcomingLaunchData() {
-    fetch('https://ground-control.netlify.app/.netlify/functions/launches')
+  async getUpcomingLaunchData() {
+    await fetch(
+      'https://ground-control.netlify.app/.netlify/functions/launches'
+    )
       .then((response) => response.json())
       .then((data) => {
         this.setUpcomingLaunchData(data);
