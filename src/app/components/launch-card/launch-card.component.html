@@ -9,7 +9,7 @@
             <h2 class="launch-date">{{ date }}</h2>
             <app-countdown-timer [launchDate]=launchDate></app-countdown-timer>
             <div class="launch-button-row">
-                <a href="#">
+                <a href="{{ watch_url }}">
                     <button type="button" class="btn">Watch</button>
                 </a>
                 <a href="upcoming-launches/{{ id }}">

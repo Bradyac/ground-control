@@ -14,17 +14,19 @@ export class LaunchCardComponent {
   date: string;
   status: string;
   statusColor: string;
+  watch_url: string;
 
   ngOnChanges() {
     if (this.data) {
       this.id = this.data._id;
       this.name = this.data.name;
-      this.image = this.data.imageLink
-        ? this.data.imageLink
+      this.image = this.data.image_url
+        ? this.data.image_url
         : 'https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/launch_images/falcon2520925_image_20210314085034.png';
       this.launchDate = new Date(this.data.date);
       this.date = this.launchDate.toLocaleString();
       this.assignStatus(this.data.status);
+      this.watch_url = this.data.watch_url ? this.data.watch_url : '#';
     }
   }
 

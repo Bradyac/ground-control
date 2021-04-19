@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import FakeLaunchData from 'src/assets/fake-launch-data.json';
 
 @Component({
   selector: 'app-upcoming-launches-page',
@@ -13,7 +12,6 @@ export class UpcomingLaunchesPageComponent implements OnInit {
 
   ngOnInit(): void {
     var temp = this.getUpcomingLaunch();
-    // this.setUpcomingLaunchData(FakeLaunchData);
   }
 
   async getUpcomingLaunch() {
