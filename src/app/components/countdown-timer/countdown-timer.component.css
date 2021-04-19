@@ -1,6 +1,5 @@
 .countdown-timer {
   display: flex;
-  /* background-color: rgba(255, 255, 255, 0.5); */
   color: white;
 }
 
@@ -13,7 +12,7 @@
   padding: 5px;
   border-radius: 15px;
   box-shadow: 0 6px 9px rgba(0, 0, 0, 0.1);
-  background-color: dodgerblue;
+  background-color: hsla(210, 83%, 44%, 0.8);
 }
 
 .countdown-timer h1 {
@@ -23,18 +22,11 @@
 
 .countdown-timer p {
   font-weight: 300;
-  font-size: 12px;
+  font-size: 0.75rem;
 }
 
 @media (min-width: 550px) {
-  .time-box {
-    margin: 5px;
-    padding: 8px;
-  }
   .countdown-timer p {
-    font-size: 14px;
+    font-size: 1rem;
   }
-}
-
-@media (min-width: 768px) {
 }

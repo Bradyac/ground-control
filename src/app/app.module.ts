@@ -9,6 +9,7 @@ import { CountdownTimerComponent } from './components/countdown-timer/countdown-
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { UpcomingLaunchesPageComponent } from './pages/upcoming-launches-page/upcoming-launches-page.component';
 import { AboutPageComponent } from './pages/about-page/about-page.component';
+import { UpcomingLaunchPageComponent } from './pages/upcoming-launch-page/upcoming-launch-page.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { AboutPageComponent } from './pages/about-page/about-page.component';
     HomePageComponent,
     UpcomingLaunchesPageComponent,
     AboutPageComponent,
+    UpcomingLaunchPageComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],

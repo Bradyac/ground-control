@@ -7,6 +7,7 @@ import { Component, Input } from '@angular/core';
 })
 export class LaunchCardComponent {
   @Input() data: any;
+  id: string;
   name: string;
   image: string;
   launchDate: Date;
@@ -16,6 +17,7 @@ export class LaunchCardComponent {
 
   ngOnChanges() {
     if (this.data) {
+      this.id = this.data._id;
       this.name = this.data.name;
       this.image = this.data.imageLink
         ? this.data.imageLink
