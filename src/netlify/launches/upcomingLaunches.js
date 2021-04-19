@@ -1,3 +1,4 @@
+const mongoose = require("mongoose");
 const UpcomingLaunch = require("./UpcomingLaunch");
 const Launch = require("./models/Launch");
 const express = require("express");
@@ -23,7 +24,7 @@ router.get("/", (req, res) => {
 
 router.get("/:id", (req, res) => {
   const launchId = req.params.id;
-  Launch.findById(launchId, (err, results) => {
+  Launch.findById(mongoose.Types.ObjectId(launchId), (err, results) => {
     if (err) {
       res.status(400).json({
         message: "[ Error fetching upcomingLaunch ]: " + err,
