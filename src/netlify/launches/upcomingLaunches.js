@@ -1,4 +1,5 @@
 const UpcomingLaunch = require("./UpcomingLaunch");
+const Launch = require("./models/Launch");
 const express = require("express");
 const router = express.Router();
 
@@ -22,18 +23,16 @@ router.get("/", (req, res) => {
 
 router.get("/:id", (req, res) => {
   const launchId = req.params.id;
-  UpcomingLaunch.findById(launchId, (err, results) => {
+  Launch.findById(launchId, (err, results) => {
     if (err) {
       res.status(400).json({
         message: "[ Error fetching upcomingLaunch ]: " + err,
       });
     }
     if (!results.length) {
-      res
-        .status(200)
-        .json({
-          message: "[ NO DATA ]: No data found for launch ID " + launchId,
-        });
+      res.status(200).json({
+        message: "[ NO DATA ]: No data found for launch ID " + launchId,
+      });
     } else {
       res.status(200).json(results);
     }
