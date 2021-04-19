@@ -1,3 +1,7 @@
+require("./models/Rocket");
+require("./models/Mission");
+require("./models/Pad");
+require("./models/Provider");
 const Launch = require("./models/Launch");
 const express = require("express");
 const router = express.Router();
