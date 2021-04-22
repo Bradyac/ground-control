@@ -7,18 +7,41 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./upcoming-launch-page.component.css'],
 })
 export class UpcomingLaunchPageComponent implements OnInit {
+  launch_name: string;
+  image: string = '';
+  rocket_name: string;
+  rocket_description: string;
+  provider_name: string;
+  provider_description: string;
+  provider_logo_url: string = '';
+
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    const routeParams = this.route.snapshot.paramMap;
-    var data = this.getUpcomingLaunch(routeParams.get('launchId'));
-    console.log(data);
+    const launchId = this.route.snapshot.paramMap.get('launchId');
+    this.getUpcomingLaunch(launchId);
   }
 
   async getUpcomingLaunch(launchId) {
-    return await fetch(
+    const fetch_url =
       'https://ground-control.netlify.app/.netlify/functions/launches/' +
-        launchId
-    ).then((response) => response.json());
+      launchId;
+    await fetch(fetch_url)
+      .then((response) => response.json())
+      .then((data) => {
+        this.setUpcomingLaunchData(data[0]);
+      });
+  }
+
+  setUpcomingLaunchData(data) {
+    this.launch_name = data.name;
+    this.image = data.image_url ? data.image_url : '';
+    this.rocket_name = data.rocket.name;
+    this.rocket_description = data.rocket.description;
+    this.provider_name = data.provider.name;
+    this.provider_description = data.provider.description;
+    this.provider_logo_url = data.provider.logo_url
+      ? data.provider.logo_url
+      : '';
   }
 }

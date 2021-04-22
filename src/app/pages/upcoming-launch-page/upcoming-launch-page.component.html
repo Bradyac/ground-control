@@ -1,1 +1,28 @@
-<p>upcoming-launch-page works!</p>
+<section class="launch">
+
+    <div class="launch-details">
+        <div class="info-box">
+            <h1 class="header-text">{{ launch_name }}</h1>
+        </div>
+        <div class="info-box">
+            <h2>Rocket</h2>
+            <h3>{{ rocket_name }}</h3>
+            <p>{{ rocket_description }}</p>
+            <div class="button-container">
+                <button>Wiki</button>
+                <button>More Info</button>
+            </div>
+        </div>
+        <div class="info-box">
+            <h2>Provider</h2>
+            <img class="provider-logo" [src]="provider_logo_url" alt="">
+            <h3>{{ provider_name }}</h3>
+            <p>{{ provider_description }}</p>
+            <div class="button-container">
+                <button>Wiki</button>
+                <button>More Info</button>
+            </div>
+        </div>
+    </div>
+    <br>
+</section>

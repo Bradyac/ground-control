@@ -4,7 +4,6 @@
 }
 
 .card {
-  background: #fff;
   background: linear-gradient(
     to right bottom,
     rgba(255, 255, 255, 0.5),
@@ -83,6 +82,7 @@ button {
   color: #fff;
   border: none;
   border-radius: 15px;
+  outline: none;
   font-size: 1rem;
   font-weight: 300;
   user-select: none;
@@ -91,7 +91,6 @@ button {
 }
 
 button:hover {
-  transform: translateY(-1.5px);
   background-color: var(--secondary-color);
 }
 

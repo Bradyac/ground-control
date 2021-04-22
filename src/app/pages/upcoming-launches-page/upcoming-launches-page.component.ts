@@ -11,11 +11,11 @@ export class UpcomingLaunchesPageComponent implements OnInit {
   list = [];
 
   ngOnInit(): void {
-    var temp = this.getUpcomingLaunch();
+    this.getUpcomingLaunch();
   }
 
   async getUpcomingLaunch() {
-    var data = await fetch(
+    await fetch(
       'https://ground-control.netlify.app/.netlify/functions/launches'
     )
       .then((response) => response.json())
