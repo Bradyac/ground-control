@@ -1,8 +1,13 @@
 <section class="launch">
-
     <div class="launch-details">
-        <div class="info-box">
-            <h1 class="header-text">{{ launch_name }}</h1>
+        <app-launch-card class="dark" [data]=launchCardData></app-launch-card>
+        <object class="video-player" *ngIf="watch_url"
+            [data]="watch_url" height="500"></object>
+        <div *ngIf="mission_name" class="info-box">
+            <h2>Mission</h2>
+            <h3>{{ mission_name }}</h3>
+            <p>{{ mission_type }}</p>
+            <p>{{ mission_description }}</p>
         </div>
         <div class="info-box">
             <h2>Rocket</h2>
@@ -24,5 +29,4 @@
             </div>
         </div>
     </div>
-    <br>
 </section>

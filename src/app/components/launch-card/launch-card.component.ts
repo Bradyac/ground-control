@@ -9,7 +9,7 @@ export class LaunchCardComponent {
   @Input() data: any;
   id: string;
   name: string;
-  image: string;
+  image: string = '';
   launchDate: Date;
   date: string;
   status: string;
@@ -26,7 +26,7 @@ export class LaunchCardComponent {
       this.launchDate = new Date(this.data.date);
       this.date = this.launchDate.toLocaleString();
       this.assignStatus(this.data.status);
-      this.watch_url = this.data.watch_url ? this.data.watch_url : '#';
+      this.watch_url = this.data.watch_url;
     }
   }
 
