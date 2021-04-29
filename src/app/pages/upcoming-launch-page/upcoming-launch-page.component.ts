@@ -19,6 +19,7 @@ export class UpcomingLaunchPageComponent implements OnInit {
   provider_description: string;
   provider_logo_url: string = '';
   pad_name: string;
+  pad_wiki_url: string;
   pad_map_url: string;
   pad_map_image_url: string = '';
 
@@ -75,5 +76,9 @@ export class UpcomingLaunchPageComponent implements OnInit {
       : '';
 
     // pad
+    this.pad_name = data.pad.location_name;
+    this.pad_wiki_url = data.pad.wiki_url;
+    this.pad_map_url = data.pad.map_url;
+    this.pad_map_image_url = data.pad.map_image_url;
   }
 }
