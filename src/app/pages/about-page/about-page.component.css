@@ -189,4 +189,9 @@
   .source-card img {
     height: 150px;
   }
+
+  .about-site-section,
+  .about-sources-section {
+    padding: 15px;
+  }
 }

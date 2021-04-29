@@ -97,7 +97,8 @@
 
 /* Provider */
 .provider-logo {
-  max-width: 375px;
+  max-width: 350px;
+  max-height: 100%;
 }
 
 /* Pad */
@@ -163,9 +164,21 @@
 /* Media Queries */
 @media (max-width: 550px) {
   .launch {
+    margin: 5px;
+  }
+
+  .launch,
+  .info-box {
     padding: 15px;
   }
 
+  /* Provider */
+  .provider-logo {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  /* Pad */
   .map-card {
     flex-direction: column;
   }
