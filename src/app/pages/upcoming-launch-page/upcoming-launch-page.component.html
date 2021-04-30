@@ -34,11 +34,9 @@
         <div class="text-container">
             <h2>Pad</h2>
             <h3>{{ pad_name }}</h3>
-            <div class="lbr">
-                <a *ngIf="pad_wiki_url" href="{{ pad_wiki_url }}"><button
-                        class="btn">Wiki</button></a>
-                <a *ngIf="pad_map_url" href="{{ pad_map_url }}"><button
-                        class="btn">Map</button></a>
+            <div class="button-container">
+                <a *ngIf="pad_wiki_url" href="{{ pad_wiki_url }}"><button>Wiki</button></a>
+                <a *ngIf="pad_map_url" href="{{ pad_map_url }}"><button>Map</button></a>
             </div>
         </div>
     </div>
