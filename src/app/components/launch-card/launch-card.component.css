@@ -89,10 +89,10 @@
 .launch-button-row {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-column-gap: 10px;
+  grid-column-gap: 15px;
 }
 
-button {
+.launch-button-row button {
   width: 100%;
   padding: 10px;
   cursor: pointer;
@@ -108,7 +108,7 @@ button {
   box-shadow: 0 6px 9px rgba(0, 0, 0, 0.1);
 }
 
-button:hover {
+.launch-button-row button:hover {
   background-color: var(--secondary-color);
 }
 
@@ -127,13 +127,13 @@ button:hover {
     margin-top: 10px;
   }
 
-  button {
+  .launch-button-row button {
     font-size: 1.25rem;
   }
 }
 
 @media (min-width: 550px) {
-  button {
+  .launch-button-row button {
     font-size: 1rem;
     min-width: 100px;
   }
@@ -168,7 +168,7 @@ button:hover {
 }
 
 @media (min-width: 768px) {
-  button {
+  .launch-button-row button {
     font-size: 1.2rem;
     min-width: 145px;
   }

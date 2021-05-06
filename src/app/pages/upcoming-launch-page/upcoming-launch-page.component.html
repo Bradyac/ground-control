@@ -12,9 +12,9 @@
         <h2>Rocket</h2>
         <h3>{{ rocket_name }}</h3>
         <p>{{ rocket_description }}</p>
-        <div class="button-container">
-            <button>Wiki</button>
-            <button>More Info</button>
+        <div class="button-row">
+            <a href=""><button>Wiki</button></a>
+            <a href=""><button>More Info</button></a>
         </div>
     </div>
     <div class="info-box">
@@ -22,9 +22,9 @@
         <img class="provider-logo" [src]="provider_logo_url" alt="">
         <h3>{{ provider_name }}</h3>
         <p>{{ provider_description }}</p>
-        <div class="button-container">
-            <button>Wiki</button>
-            <button>More Info</button>
+        <div class="button-row">
+            <a href=""><button>Wiki</button></a>
+            <a href=""><button>More Info</button></a>
         </div>
     </div>
     <div *ngIf="pad_name" class="map-card">
@@ -34,7 +34,7 @@
         <div class="text-container">
             <h2>Pad</h2>
             <h3>{{ pad_name }}</h3>
-            <div class="button-container">
+            <div class="button-row">
                 <a *ngIf="pad_wiki_url" href="{{ pad_wiki_url }}"><button>Wiki</button></a>
                 <a *ngIf="pad_map_url" href="{{ pad_map_url }}"><button>Map</button></a>
             </div>

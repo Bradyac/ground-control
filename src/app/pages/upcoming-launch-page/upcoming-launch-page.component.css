@@ -35,7 +35,30 @@
   padding: 10px;
 }
 
-.launch button {
+.button-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 15px;
+  width: 100%;
+}
+
+.button-row button {
+  width: 100%;
+  padding: 10px;
+  cursor: pointer;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 15px;
+  outline: none;
+  font-size: 1rem;
+  font-weight: 300;
+  user-select: none;
+  -webkit-user-select: none;
+  box-shadow: 0 6px 9px rgba(0, 0, 0, 0.1);
+}
+
+/* .launch button {
   width: 100%;
   padding: 15px;
   cursor: pointer;
@@ -55,7 +78,7 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-}
+} */
 
 .button-container > * + * {
   margin-left: 30px;

@@ -10,16 +10,16 @@
             <app-countdown-timer [launchDate]=launchDate></app-countdown-timer>
             <div class="launch-button-row">
                 <a *ngIf="watch_url" href="{{ watch_url }}">
-                    <button type="button" class="btn">Watch</button>
+                    <button type="button">Watch</button>
                 </a>
                 <a *ngIf="!watch_url" href="javascript:void(0)">
-                    <button type="button" class="btn">No Video</button>
+                    <button type="button">No Video</button>
                 </a>
                 <a href="upcoming-launches/{{ id }}">
-                    <button type="button" class="btn">More Info</button>
+                    <button type="button">More Info</button>
                 </a>
                 <a href="#">
-                    <button type="button" class="btn">Share</button>
+                    <button type="button">Share</button>
                 </a>
             </div>
         </div>
