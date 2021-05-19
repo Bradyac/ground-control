@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const LaunchSchema = Schema({
-  _id: Schema.Types.ObjectId,
+  _id: String,
   name: {
     type: String,
   },
@@ -10,6 +10,9 @@ const LaunchSchema = Schema({
     type: Number,
   },
   date: {
+    type: String,
+  },
+  slug: {
     type: String,
   },
   image_url: {

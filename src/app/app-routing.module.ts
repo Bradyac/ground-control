@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: 'about', component: AboutPageComponent },
   { path: 'upcoming-launches', component: UpcomingLaunchesPageComponent },
   {
-    path: 'upcoming-launches/:launchId',
+    path: 'upcoming-launches/:slug',
     component: UpcomingLaunchPageComponent,
   },
 ];

@@ -24,9 +24,9 @@ router.get("/", (req, res) => {
   });
 });
 
-router.get("/:id", (req, res) => {
-  const launchId = req.params.id;
-  Launch.find({ _id: launchId })
+router.get("/:slug", (req, res) => {
+  const slug = req.params.slug;
+  Launch.find({ slug: slug })
     .populate("rocket")
     .populate("mission")
     .populate("pad")
@@ -39,7 +39,7 @@ router.get("/:id", (req, res) => {
       }
       if (!results.length) {
         res.status(200).json({
-          message: "[ NO DATA ]: No data found for launch ID " + launchId,
+          message: "[ NO DATA ]: No data found for launch: " + slug,
         });
       } else {
         res.status(200).json(results);

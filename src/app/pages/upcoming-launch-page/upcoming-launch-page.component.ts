@@ -26,14 +26,13 @@ export class UpcomingLaunchPageComponent implements OnInit {
   constructor(private route: ActivatedRoute, private sanitizer: DomSanitizer) {}
 
   ngOnInit(): void {
-    const launchId = this.route.snapshot.paramMap.get('launchId');
-    this.getUpcomingLaunch(launchId);
+    const slug = this.route.snapshot.paramMap.get('slug');
+    console.log('slug ' + slug);
+    this.getUpcomingLaunch(slug);
   }
 
-  async getUpcomingLaunch(launchId) {
-    const fetch_url =
-      'https://ground-control.netlify.app/.netlify/functions/launches/' +
-      launchId;
+  async getUpcomingLaunch(slug) {
+    const fetch_url = '.netlify/functions/launches/' + slug;
     await fetch(fetch_url)
       .then((response) => response.json())
       .then((data) => {

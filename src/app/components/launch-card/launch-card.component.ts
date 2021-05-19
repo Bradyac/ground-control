@@ -14,6 +14,7 @@ export class LaunchCardComponent {
   date: string;
   status: string;
   statusColor: string;
+  slug: string;
   watch_url: string;
 
   ngOnChanges() {
@@ -26,6 +27,7 @@ export class LaunchCardComponent {
       this.launchDate = new Date(this.data.date);
       this.date = this.launchDate.toLocaleString();
       this.assignStatus(this.data.status);
+      this.slug = this.data.slug;
       this.watch_url = this.data.watch_url;
     }
   }
