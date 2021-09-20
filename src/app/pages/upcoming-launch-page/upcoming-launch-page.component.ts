@@ -32,7 +32,8 @@ export class UpcomingLaunchPageComponent implements OnInit {
   }
 
   async getUpcomingLaunch(slug) {
-    const fetch_url = '.netlify/functions/launches/' + slug;
+    const fetch_url =
+      'https://ground-control.netlify.app/.netlify/functions/launches/' + slug;
     await fetch(fetch_url)
       .then((response) => response.json())
       .then((data) => {

@@ -1,3 +1,4 @@
+import { ArgumentType } from '@angular/compiler/src/core';
 import { Component, Input } from '@angular/core';
 
 @Component({
@@ -6,6 +7,7 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./launch-card.component.css'],
 })
 export class LaunchCardComponent {
+  currentRoute: string;
   @Input() data: any;
   id: string;
   name: string;
@@ -16,6 +18,10 @@ export class LaunchCardComponent {
   statusColor: string;
   slug: string;
   watch_url: string;
+
+  constructor() {
+    this.currentRoute = window.location.href;
+  }
 
   ngOnChanges() {
     if (this.data) {
@@ -58,5 +64,12 @@ export class LaunchCardComponent {
         this.statusColor = '--default-color';
         break;
     }
+  }
+
+  onCopy(event) {
+    event.target.innerHTML = 'Copied!';
+    setTimeout(() => {
+      event.target.innerHTML = 'Share';
+    }, 2000);
   }
 }

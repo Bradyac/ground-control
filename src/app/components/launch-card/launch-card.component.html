@@ -12,15 +12,15 @@
                 <a *ngIf="watch_url" href="{{ watch_url }}">
                     <button type="button">Watch</button>
                 </a>
-                <a *ngIf="!watch_url" href="javascript:void(0)">
-                    <button type="button">No Video</button>
-                </a>
+                <button *ngIf="!watch_url" type="button"
+                    style="background-color: #999; color: #ccc; cursor:
+                    not-allowed;">No Video</button>
                 <a href="upcoming-launches/{{ slug }}">
                     <button type="button">More Info</button>
                 </a>
-                <a href="#">
-                    <button type="button">Share</button>
-                </a>
+                <button ngxClipboard [cbContent]="currentRoute + '/' + slug"
+                    type="button" (click)=onCopy($event) style="cursor:
+                    context-menu">Share</button>
             </div>
         </div>
     </div>

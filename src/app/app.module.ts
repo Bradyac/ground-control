@@ -10,6 +10,7 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { UpcomingLaunchesPageComponent } from './pages/upcoming-launches-page/upcoming-launches-page.component';
 import { AboutPageComponent } from './pages/about-page/about-page.component';
 import { UpcomingLaunchPageComponent } from './pages/upcoming-launch-page/upcoming-launch-page.component';
+import { ClipboardModule } from 'ngx-clipboard';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { UpcomingLaunchPageComponent } from './pages/upcoming-launch-page/upcomi
     AboutPageComponent,
     UpcomingLaunchPageComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, ClipboardModule],
   providers: [],
   bootstrap: [AppComponent],
 })
