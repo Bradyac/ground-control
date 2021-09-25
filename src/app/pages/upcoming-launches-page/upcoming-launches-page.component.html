@@ -1,4 +1,5 @@
 <h1 class="header-text">
     Upcoming Launches
 </h1>
-<app-launch-card class="light" *ngFor="let launch of list" [data]=launch></app-launch-card>
+<app-launch-card class="light" *ngFor="let l of launches"
+    [launch]=l></app-launch-card>

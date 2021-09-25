@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Launch } from 'src/app/interfaces/launch';
+import { UpcomingLaunchService } from 'src/app/services/upcoming-launch.service';
 
 @Component({
   selector: 'app-upcoming-launches-page',
@@ -6,28 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./upcoming-launches-page.component.css'],
 })
 export class UpcomingLaunchesPageComponent implements OnInit {
-  title = 'ground-control';
-  UpcomingLaunchData: any;
-  list = [];
+  launches: Launch[];
+
+  constructor(private upcomingLaunchService: UpcomingLaunchService) {}
 
   ngOnInit(): void {
-    this.getUpcomingLaunch();
-  }
-
-  async getUpcomingLaunch() {
-    await fetch(
-      'https://ground-control.netlify.app/.netlify/functions/launches'
-    ) //.netlify/functions/launches
-      .then((response) => response.json())
-      .then((data) => {
-        this.setUpcomingLaunchData(data);
-      });
-  }
-
-  setUpcomingLaunchData(data) {
-    this.UpcomingLaunchData = data;
-    this.UpcomingLaunchData.forEach((element) => {
-      this.list.push(element);
+    this.upcomingLaunchService.getUpcomingLaunches().subscribe((data) => {
+      this.launches = data;
     });
   }
 }

@@ -1,17 +1,17 @@
 <section class="launch">
-    <app-launch-card class="dark" [data]=launchCardData></app-launch-card>
-    <object class="video-player" *ngIf="watch_url"
-        [data]="watch_url" height="500"></object>
-    <div *ngIf="mission_name" class="info-box">
+    <app-launch-card class="dark" *ngIf="launch" [launch]=launch></app-launch-card>
+    <object class="video-player" *ngIf="launch?.watch_url"
+        [data]="launch?.watch_url" height="500"></object>
+    <div *ngIf="launch?.mission?.name" class="info-box">
         <h2>Mission</h2>
-        <h3>{{ mission_name }}</h3>
-        <p>{{ mission_type }}</p>
-        <p>{{ mission_description }}</p>
+        <h3>{{ launch?.mission?.name }}</h3>
+        <p>{{ launch?.mission?.type }}</p>
+        <p>{{ launch?.mission?.description }}</p>
     </div>
     <div class="info-box">
         <h2>Rocket</h2>
-        <h3>{{ rocket_name }}</h3>
-        <p>{{ rocket_description }}</p>
+        <h3>{{ launch?.rocket?.name }}</h3>
+        <p>{{ launch?.rocket?.description }}</p>
         <div class="button-row">
             <a href=""><button>Wiki</button></a>
             <a href=""><button>More Info</button></a>
@@ -19,24 +19,24 @@
     </div>
     <div class="info-box">
         <h2>Provider</h2>
-        <img class="provider-logo" [src]="provider_logo_url" alt="">
-        <h3>{{ provider_name }}</h3>
-        <p>{{ provider_description }}</p>
+        <img class="provider-logo" [src]="launch?.provider?.logo_url" alt="">
+        <h3>{{ launch?.provider?.name }}</h3>
+        <p>{{ launch?.provider?.description }}</p>
         <div class="button-row">
             <a href=""><button>Wiki</button></a>
             <a href=""><button>More Info</button></a>
         </div>
     </div>
-    <div *ngIf="pad_name" class="map-card">
+    <div *ngIf="launch?.pad?.name" class="map-card">
         <div class="image" [ngStyle]="{'background-image': 'url(' +
-            pad_map_image_url +
+            launch?.pad?.map_image_url +
             ')'}" style="background-position: center; background-size: cover;"></div>
         <div class="text-container">
             <h2>Pad</h2>
-            <h3>{{ pad_name }}</h3>
+            <h3>{{ launch?.pad?.name }}</h3>
             <div class="button-row">
-                <a *ngIf="pad_wiki_url" href="{{ pad_wiki_url }}"><button>Wiki</button></a>
-                <a *ngIf="pad_map_url" href="{{ pad_map_url }}"><button>Map</button></a>
+                <a *ngIf="launch?.pad?.wiki_url" href="{{ launch?.pad?.wiki_url }}"><button>Wiki</button></a>
+                <a *ngIf="launch?.pad?.map_url" href="{{ launch?.pad?.map_url }}"><button>Map</button></a>
             </div>
         </div>
     </div>
