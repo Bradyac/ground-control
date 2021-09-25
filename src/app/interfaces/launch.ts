@@ -1,6 +1,6 @@
 import { Mission } from '../types/mission';
 import { Rocket } from '../types/rocket';
-import { Provider } from '../types/Provider';
+import { Provider } from '../types/provider';
 import { Pad } from '../types/pad';
 
 export interface Launch {
