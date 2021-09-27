@@ -12,14 +12,12 @@ mongoose.connect(process.env.DB_CONNECTION, {
 });
 
 // Routes
-const NextLaunchRoute = require("./next-launch");
-const SelectedLaunchRoute = require("./selected-launch");
+const ArticlesRoute = require("./articles-routes");
 
 // Middleware
 app.use(cors({ origin: "*" }));
 app.use(express.json());
-app.use("/.netlify/functions/launch", NextLaunchRoute);
-app.use("/.netlify/functions/launch", SelectedLaunchRoute);
+app.use("/.netlify/functions/articles", ArticlesRoute);
 
 module.exports = app;
 module.exports.handler = serverless(app);

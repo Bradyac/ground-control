@@ -17,7 +17,7 @@ const UpcomingLaunchesRoute = require("./launches");
 // Middleware
 app.use(cors({ origin: "*" }));
 app.use(express.json());
-app.use("/.netlify/functions/upcoming_launches", UpcomingLaunchesRoute);
+app.use("/.netlify/functions/upcoming-launches", UpcomingLaunchesRoute);
 
 module.exports = app;
 module.exports.handler = serverless(app);

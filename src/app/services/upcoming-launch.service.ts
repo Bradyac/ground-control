@@ -15,34 +15,44 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class UpcomingLaunchService {
   constructor(private http: HttpClient, private sanitizer: DomSanitizer) {}
 
+  // get list of upcoming launches to disaplay on upcoming-launches page
   getUpcomingLaunches(): Observable<Launch[]> {
-    return this.http.get<any[]>('.netlify/functions/upcoming_launches').pipe(
-      map((response) => {
-        let launches: Launch[] = [];
-        response.forEach((data) => {
-          let launch: Launch = {
-            _id: data._id,
-            name: data.name,
-            status: this.assignStatus(data.status),
-            date: new Date(data.date),
-            slug: data.slug,
-            image_url:
-              data.image_url ||
-              'https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/launch_images/falcon2520925_image_20210314085034.png',
-            watch_url: data.watch_url,
-          };
-          launches.push(launch);
-        });
-        return launches;
-      })
-    );
+    return this.http
+      .get<any[]>(
+        'https://ground-control.netlify.app/.netlify/functions/upcoming_launches'
+      )
+      .pipe(
+        map((response) => {
+          let launches: Launch[] = [];
+          response.forEach((data) => {
+            let launch: Launch = {
+              _id: data._id,
+              name: data.name,
+              status: this.assignStatus(data.status),
+              date: new Date(data.date),
+              slug: data.slug,
+              image_url:
+                data.image_url ||
+                'https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/launch_images/falcon2520925_image_20210314085034.png',
+              watch_url: data.watch_url,
+            };
+            launches.push(launch);
+          });
+          return launches;
+        })
+      );
   }
 
+  // get selected launch to display on upcoming-launch page
   getUpcomingLaunch(slug: string): Observable<Launch> {
-    return this.http.get<any>('.netlify/functions/launch/' + slug).pipe(
-      map((response) => {
-        let launch: Launch;
-        response.forEach((data) => {
+    return this.http
+      .get<any>(
+        'https://ground-control.netlify.app/.netlify/functions/launch/' + slug
+      )
+      .pipe(
+        map((response) => {
+          let launch: Launch;
+          let data = response[0];
           let rocket: Rocket = {
             name: data.rocket.name,
             description: data.rocket.description,
@@ -93,14 +103,36 @@ export class UpcomingLaunchService {
             provider: provider,
             pad: pad,
           };
-        });
-        return launch;
-      })
-    );
+          return launch;
+        })
+      );
   }
 
-  // for some reason I am unable to put the arg type as number even though it is a number
-  assignStatus(status_code): string[] {
+  getNextLaunch(): Observable<Launch> {
+    return this.http
+      .get<any>(
+        'https://ground-control.netlify.app/.netlify/functions/launch/next'
+      )
+      .pipe(
+        map((response) => {
+          let data = response[0];
+          let launch: Launch = {
+            _id: data._id,
+            name: data.name,
+            status: this.assignStatus(data.status),
+            date: new Date(data.date),
+            slug: data.slug,
+            image_url:
+              data.image_url ||
+              'https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/launch_images/falcon2520925_image_20210314085034.png',
+            watch_url: data.watch_url,
+          };
+          return launch;
+        })
+      );
+  }
+
+  assignStatus(status_code: number): string[] {
     let status = [];
     switch (status_code) {
       case 1:

@@ -12,11 +12,10 @@ router.get("/", (req, res) => {
       res.status(400).json({
         message: "[ Error fetching upcomingLaunches ]: " + err,
       });
-    }
-    if (!results.length) {
-      res
-        .status(200)
-        .json({ message: "[ NO DATA ]: There are no upcoming launches!" });
+    } else if (!results.length) {
+      res.status(200).json({
+        message: "[ NO DATA ]: There are no upcoming launches!",
+      });
     } else {
       res.status(200).json(results);
     }
