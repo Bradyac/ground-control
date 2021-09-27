@@ -2,11 +2,11 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { Launch } from '../interfaces/launch';
-import { Rocket } from '../types/rocket';
-import { Mission } from '../types/mission';
-import { Provider } from '../types/provider';
-import { Pad } from '../types/pad';
+import { Launch } from '../../interfaces/launch';
+import { Rocket } from '../../types/rocket';
+import { Mission } from '../../types/mission';
+import { Provider } from '../../types/provider';
+import { Pad } from '../../types/pad';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Injectable({

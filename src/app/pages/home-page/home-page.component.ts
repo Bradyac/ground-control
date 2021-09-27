@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Article } from 'src/app/interfaces/article';
 import { Launch } from 'src/app/interfaces/launch';
-import { UpcomingLaunchService } from 'src/app/services/upcoming-launch.service';
+import { ArticlesService } from 'src/app/services/articles-service/articles.service';
+import { UpcomingLaunchService } from 'src/app/services/upcoming-launch-service/upcoming-launch.service';
 
 @Component({
   selector: 'app-home-page',
@@ -9,12 +11,23 @@ import { UpcomingLaunchService } from 'src/app/services/upcoming-launch.service'
 })
 export class HomePageComponent implements OnInit {
   launch: Launch;
+  articles: Article[];
 
-  constructor(private upcomingLaunchService: UpcomingLaunchService) {}
+  constructor(
+    private upcomingLaunchService: UpcomingLaunchService,
+    private articlesService: ArticlesService
+  ) {}
 
   ngOnInit(): void {
+    // next upcoming launch
     this.upcomingLaunchService.getNextLaunch().subscribe((data) => {
       this.launch = data;
+    });
+
+    // list of articles
+    this.articlesService.getArticles().subscribe((data) => {
+      this.articles = data;
+      console.log(this.articles);
     });
   }
 }

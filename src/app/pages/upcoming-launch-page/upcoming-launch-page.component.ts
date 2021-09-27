@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Launch } from 'src/app/interfaces/launch';
-import { UpcomingLaunchService } from 'src/app/services/upcoming-launch.service';
+import { UpcomingLaunchService } from 'src/app/services/upcoming-launch-service/upcoming-launch.service';
 
 @Component({
   selector: 'app-upcoming-launch-page',
