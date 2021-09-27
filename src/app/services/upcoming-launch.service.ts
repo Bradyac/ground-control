@@ -17,105 +17,10 @@ export class UpcomingLaunchService {
 
   // get list of upcoming launches to disaplay on upcoming-launches page
   getUpcomingLaunches(): Observable<Launch[]> {
-    return this.http
-      .get<any[]>(
-        'https://ground-control.netlify.app/.netlify/functions/upcoming_launches'
-      )
-      .pipe(
-        map((response) => {
-          let launches: Launch[] = [];
-          response.forEach((data) => {
-            let launch: Launch = {
-              _id: data._id,
-              name: data.name,
-              status: this.assignStatus(data.status),
-              date: new Date(data.date),
-              slug: data.slug,
-              image_url:
-                data.image_url ||
-                'https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/launch_images/falcon2520925_image_20210314085034.png',
-              watch_url: data.watch_url,
-            };
-            launches.push(launch);
-          });
-          return launches;
-        })
-      );
-  }
-
-  // get selected launch to display on upcoming-launch page
-  getUpcomingLaunch(slug: string): Observable<Launch> {
-    return this.http
-      .get<any>(
-        'https://ground-control.netlify.app/.netlify/functions/launch/' + slug
-      )
-      .pipe(
-        map((response) => {
-          let launch: Launch;
-          let data = response[0];
-          let rocket: Rocket = {
-            name: data.rocket.name,
-            description: data.rocket.description,
-          };
-
-          let mission: Mission;
-          if (data.mission) {
-            mission = {
-              name: data.mission.name,
-              type: data.mission.type,
-              description: data.mission.description,
-            };
-          }
-
-          let provider: Provider = {
-            name: data.provider.name,
-            description: data.provider.description,
-            logo_url: data.provider.logo_url || '',
-          };
-
-          let pad: Pad = {
-            name: data.pad.location_name,
-            wiki_url: data.pad.wiki_url,
-            map_url: data.pad.map_url,
-            map_image_url: data.pad.map_image_url || '',
-          };
-
-          // Clean video URL
-          let watch_url;
-          if (data.watch_url) {
-            var embed_url = data.watch_url.replace('/watch?v=', '/embed/');
-            watch_url =
-              this.sanitizer.bypassSecurityTrustResourceUrl(embed_url);
-          }
-
-          launch = {
-            _id: data._id,
-            name: data.name,
-            status: this.assignStatus(data.status),
-            date: new Date(data.date),
-            slug: data.slug,
-            image_url:
-              data.image_url ||
-              'https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/launch_images/falcon2520925_image_20210314085034.png',
-            watch_url: watch_url,
-            rocket: rocket,
-            mission: mission,
-            provider: provider,
-            pad: pad,
-          };
-          return launch;
-        })
-      );
-  }
-
-  getNextLaunch(): Observable<Launch> {
-    return this.http
-      .get<any>(
-        'https://ground-control.netlify.app/.netlify/functions/launch/next'
-      )
-      .pipe(
-        map((response) => {
-          let data = response[0];
+    return this.http.get<any[]>('.netlify/functions/upcoming-launches').pipe(
+      map((response) => {
+        let launches: Launch[] = [];
+        response.forEach((data) => {
           let launch: Launch = {
             _id: data._id,
             name: data.name,
@@ -127,9 +32,91 @@ export class UpcomingLaunchService {
               'https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/launch_images/falcon2520925_image_20210314085034.png',
             watch_url: data.watch_url,
           };
-          return launch;
-        })
-      );
+          launches.push(launch);
+        });
+        return launches;
+      })
+    );
+  }
+
+  // get selected launch to display on upcoming-launch page
+  getUpcomingLaunch(slug: string): Observable<Launch> {
+    return this.http.get<any>('.netlify/functions/launch/' + slug).pipe(
+      map((response) => {
+        let launch: Launch;
+        let data = response[0];
+        let rocket: Rocket = {
+          name: data.rocket.name,
+          description: data.rocket.description,
+        };
+
+        let mission: Mission;
+        if (data.mission) {
+          mission = {
+            name: data.mission.name,
+            type: data.mission.type,
+            description: data.mission.description,
+          };
+        }
+
+        let provider: Provider = {
+          name: data.provider.name,
+          description: data.provider.description,
+          logo_url: data.provider.logo_url || '',
+        };
+
+        let pad: Pad = {
+          name: data.pad.location_name,
+          wiki_url: data.pad.wiki_url,
+          map_url: data.pad.map_url,
+          map_image_url: data.pad.map_image_url || '',
+        };
+
+        // Clean video URL
+        let watch_url;
+        if (data.watch_url) {
+          var embed_url = data.watch_url.replace('/watch?v=', '/embed/');
+          watch_url = this.sanitizer.bypassSecurityTrustResourceUrl(embed_url);
+        }
+
+        launch = {
+          _id: data._id,
+          name: data.name,
+          status: this.assignStatus(data.status),
+          date: new Date(data.date),
+          slug: data.slug,
+          image_url:
+            data.image_url ||
+            'https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/launch_images/falcon2520925_image_20210314085034.png',
+          watch_url: watch_url,
+          rocket: rocket,
+          mission: mission,
+          provider: provider,
+          pad: pad,
+        };
+        return launch;
+      })
+    );
+  }
+
+  getNextLaunch(): Observable<Launch> {
+    return this.http.get<any>('.netlify/functions/launch/next').pipe(
+      map((response) => {
+        let data = response[0];
+        let launch: Launch = {
+          _id: data._id,
+          name: data.name,
+          status: this.assignStatus(data.status),
+          date: new Date(data.date),
+          slug: data.slug,
+          image_url:
+            data.image_url ||
+            'https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/launch_images/falcon2520925_image_20210314085034.png',
+          watch_url: data.watch_url,
+        };
+        return launch;
+      })
+    );
   }
 
   assignStatus(status_code: number): string[] {
