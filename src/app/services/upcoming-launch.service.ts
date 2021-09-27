@@ -16,7 +16,7 @@ export class UpcomingLaunchService {
   constructor(private http: HttpClient, private sanitizer: DomSanitizer) {}
 
   getUpcomingLaunches(): Observable<Launch[]> {
-    return this.http.get<any[]>('.netlify/functions/launches').pipe(
+    return this.http.get<any[]>('.netlify/functions/upcoming_launches').pipe(
       map((response) => {
         let launches: Launch[] = [];
         response.forEach((data) => {
@@ -39,7 +39,7 @@ export class UpcomingLaunchService {
   }
 
   getUpcomingLaunch(slug: string): Observable<Launch> {
-    return this.http.get<any>('.netlify/functions/launches/' + slug).pipe(
+    return this.http.get<any>('.netlify/functions/launch/' + slug).pipe(
       map((response) => {
         let launch: Launch;
         response.forEach((data) => {
