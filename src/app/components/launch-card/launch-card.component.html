@@ -1,8 +1,7 @@
 <section class="launch flex">
     <div class="card">
-        <div class="image" [ngStyle]="{'background-image': 'url(' +
-            launch?.image_url +
-            ')'}" style="background-position: center; background-size: cover;"></div>
+        <div class="image" [ngStyle]="{'background-image': 'url(' + launch?.image_url +')'}" style="background-position: center;
+            background-size: cover;"></div>
         <div class="text-container">
             <div class="pill" [ngStyle]="{'background-color': 'var(' + launch?.status[1] + ')'}" alt="launch status">{{ launch?.status[0] }}</div>
             <h1 class="launch-title">{{ launch?.name }}</h1>

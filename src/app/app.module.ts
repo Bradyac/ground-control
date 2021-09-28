@@ -12,6 +12,7 @@ import { AboutPageComponent } from './pages/about-page/about-page.component';
 import { UpcomingLaunchPageComponent } from './pages/upcoming-launch-page/upcoming-launch-page.component';
 import { ClipboardModule } from 'ngx-clipboard';
 import { HttpClientModule } from '@angular/common/http';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,13 @@ import { HttpClientModule } from '@angular/common/http';
     AboutPageComponent,
     UpcomingLaunchPageComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, ClipboardModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    ClipboardModule,
+    HttpClientModule,
+    NgxPaginationModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

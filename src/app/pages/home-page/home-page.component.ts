@@ -12,6 +12,7 @@ import { UpcomingLaunchService } from 'src/app/services/upcoming-launch-service/
 export class HomePageComponent implements OnInit {
   launch: Launch;
   articles: Article[];
+  page: number = 1;
 
   constructor(
     private upcomingLaunchService: UpcomingLaunchService,
@@ -28,6 +29,14 @@ export class HomePageComponent implements OnInit {
     this.articlesService.getArticles().subscribe((data) => {
       this.articles = data;
       console.log(this.articles);
+    });
+  }
+
+  scroll() {
+    document.getElementById('target').scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+      inline: 'nearest',
     });
   }
 }

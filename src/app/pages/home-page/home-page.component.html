@@ -1,4 +1,25 @@
 <section class="home">
     <h1 class="header-text">Next Launch</h1>
     <app-launch-card class="light" *ngIf="launch" [launch]=launch></app-launch-card>
+    <br>
+    <h1 id="target" class="header-text">Articles</h1>
+    <div class="articles-section" *ngIf="articles">
+        <div *ngFor="let article of articles | paginate: {itemsPerPage: 10, currentPage: page}">
+            <div class="article">
+                <div class="image" [ngStyle]="{'background-image': 'url(' + article.image_url +')'}">
+                </div>
+                <div class="content">
+                    <h1 class="title">{{ article.title }}</h1>
+                    <h3 class="news-site">{{ article.news_site }}</h3>
+                    <p class="updated-date">{{ article.published_date }}</p>
+                    <p class="summary">{{ article.summary }}</p>
+                    <a href="{{ article.url }}">
+                        <button type="button">Read</button>
+                    </a>
+                </div>
+            </div>
+            <br><hr><br>
+        </div>
+        <pagination-controls (pageChange)="scroll()" (pageChange)="page= $event"></pagination-controls>
+    </div>
 </section>
