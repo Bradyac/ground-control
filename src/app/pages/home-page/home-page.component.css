@@ -6,6 +6,7 @@
 .articles-section {
   display: flex;
   flex-direction: column;
+  margin-top: 30px;
   padding: 30px;
   color: #fff;
   background: linear-gradient(
@@ -58,7 +59,19 @@
   box-shadow: 0 6px 9px rgba(0, 0, 0, 0.1);
 }
 
+.pagination::ng-deep .ngx-pagination a {
+  color: white;
+}
+
+.pagination::ng-deep .ngx-pagination a:hover {
+  color: #2199e8;
+}
+
 @media (max-width: 768px) {
+  .articles-section {
+    padding: 15px;
+  }
+
   .article {
     flex-direction: column;
   }

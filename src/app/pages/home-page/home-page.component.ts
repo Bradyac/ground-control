@@ -28,7 +28,6 @@ export class HomePageComponent implements OnInit {
     // list of articles
     this.articlesService.getArticles().subscribe((data) => {
       this.articles = data;
-      console.log(this.articles);
     });
   }
 
