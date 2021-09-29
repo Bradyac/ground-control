@@ -1,8 +1,10 @@
 <section class="home">
     <h1 class="header-text">Next Launch</h1>
+    <div *ngIf="!launch" class="loading-card"></div>
     <app-launch-card class="light" *ngIf="launch" [launch]=launch></app-launch-card>
     <br>
     <h1 id="target" class="header-text">Articles</h1>
+    <div *ngIf="!articles" class="loading-card"></div>
     <div class="articles-section" *ngIf="articles">
         <div *ngFor="let article of articles | paginate: {itemsPerPage: 10, currentPage: page}">
             <div class="article">

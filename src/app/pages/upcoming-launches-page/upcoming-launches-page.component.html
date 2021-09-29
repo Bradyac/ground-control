@@ -1,5 +1,7 @@
-<h1 class="header-text">
-    Upcoming Launches
-</h1>
-<app-launch-card class="light" *ngFor="let l of launches"
-    [launch]=l></app-launch-card>
+<section class="upcoming-launches">
+    <h1 class="header-text">Upcoming Launches</h1>
+    <div *ngIf="!launches">
+        <div *ngFor="let i of [].constructor(10)" class="loading-card"></div>
+    </div>
+    <app-launch-card class="light" *ngFor="let l of launches" [launch]=l></app-launch-card>
+</section>
