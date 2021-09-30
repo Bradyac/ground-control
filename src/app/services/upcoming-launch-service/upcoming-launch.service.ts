@@ -48,6 +48,8 @@ export class UpcomingLaunchService {
         let rocket: Rocket = {
           name: data.rocket.name,
           description: data.rocket.description,
+          info_url: data.rocket.info_url,
+          wiki_url: data.rocket.wiki_url,
         };
 
         let mission: Mission;
@@ -63,6 +65,8 @@ export class UpcomingLaunchService {
           name: data.provider.name,
           description: data.provider.description,
           logo_url: data.provider.logo_url || '',
+          info_url: data.provider.info_url,
+          wiki_url: data.provider.wiki_url,
         };
 
         let pad: Pad = {

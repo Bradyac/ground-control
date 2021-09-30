@@ -38,6 +38,12 @@ a {
   text-decoration: none;
 }
 
+.disabled-button {
+  background-color: #999 !important;
+  color: #ccc !important;
+  cursor: not-allowed !important;
+}
+
 .header-text {
   text-align: center;
   color: #fff;

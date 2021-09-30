@@ -17,8 +17,11 @@
                 <h3>{{ launch.rocket.name }}</h3>
                 <p>{{ launch.rocket.description }}</p>
                 <div class="button-row">
-                    <a href=""><button>Wiki</button></a>
-                    <a href=""><button>More Info</button></a>
+                    <a *ngIf="launch.rocket.wiki_url" href="{{ launch.rocket.wiki_url }}"><button>Wiki</button></a>
+                    <button *ngIf="!launch.rocket.wiki_url" type="button" class="disabled-button">Wiki</button>
+                    <a *ngIf="launch.rocket.info_url" href="{{ launch.rocket.info_url }}"><button>More Info</button></a>
+                    <button *ngIf="!launch.rocket.info_url" type="button" class="disabled-button">More
+                        Info</button>
                 </div>
             </div>
             <div class="info-box">
@@ -27,8 +30,10 @@
                 <h3>{{ launch.provider.name }}</h3>
                 <p>{{ launch.provider.description }}</p>
                 <div class="button-row">
-                    <a href=""><button>Wiki</button></a>
-                    <a href=""><button>More Info</button></a>
+                    <a *ngIf="launch.provider.wiki_url" href="{{ launch.provider.wiki_url }}"><button>Wiki</button></a>
+                    <button *ngIf="!launch.provider.wiki_url" type="button" class="disabled-button">Wiki</button>
+                    <a *ngIf="launch.provider.info_url" href="{{ launch.provider.info_url }}"><button>More Info</button></a>
+                    <button *ngIf="!launch.provider.info_url" type="button" class="disabled-button">More Info</button>
                 </div>
             </div>
             <div *ngIf="launch.pad.name" class="map-card">
@@ -40,7 +45,9 @@
                     <h3>{{ launch.pad.name }}</h3>
                     <div class="button-row">
                         <a *ngIf="launch.pad.wiki_url" href="{{ launch.pad.wiki_url }}"><button>Wiki</button></a>
+                        <button *ngIf="!launch.pad.wiki_url" type="button" class="disabled-button">Wiki</button>
                         <a *ngIf="launch.pad.map_url" href="{{ launch.pad.map_url }}"><button>Map</button></a>
+                        <button *ngIf="!launch.pad.map_url" type="button" class="disabled-button">Map</button>
                     </div>
                 </div>
             </div>
