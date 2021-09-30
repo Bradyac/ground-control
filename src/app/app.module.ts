@@ -9,7 +9,7 @@ import { CountdownTimerComponent } from './components/countdown-timer/countdown-
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { UpcomingLaunchesPageComponent } from './pages/upcoming-launches-page/upcoming-launches-page.component';
 import { AboutPageComponent } from './pages/about-page/about-page.component';
-import { UpcomingLaunchPageComponent } from './pages/upcoming-launch-page/upcoming-launch-page.component';
+import { LaunchPageComponent } from './pages/launch-page/launch-page.component';
 import { ClipboardModule } from 'ngx-clipboard';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxPaginationModule } from 'ngx-pagination';
@@ -23,7 +23,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     HomePageComponent,
     UpcomingLaunchesPageComponent,
     AboutPageComponent,
-    UpcomingLaunchPageComponent,
+    LaunchPageComponent,
   ],
   imports: [
     BrowserModule,

@@ -4,11 +4,11 @@ import { Launch } from 'src/app/interfaces/launch';
 import { UpcomingLaunchService } from 'src/app/services/upcoming-launch-service/upcoming-launch.service';
 
 @Component({
-  selector: 'app-upcoming-launch-page',
-  templateUrl: './upcoming-launch-page.component.html',
-  styleUrls: ['./upcoming-launch-page.component.css'],
+  selector: 'app-launch-page',
+  templateUrl: './launch-page.component.html',
+  styleUrls: ['./launch-page.component.css'],
 })
-export class UpcomingLaunchPageComponent implements OnInit {
+export class LaunchPageComponent implements OnInit {
   launch: Launch;
 
   constructor(

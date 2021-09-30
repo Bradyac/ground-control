@@ -12,10 +12,10 @@
                     <button type="button">Watch</button>
                 </a>
                 <button *ngIf="!launch.watch_url" type="button" class="disabled-button">No Video</button>
-                <a href="upcoming-launches/{{ launch.slug }}">
+                <a href="launch/{{ launch.slug }}">
                     <button type="button">More Info</button>
                 </a>
-                <button ngxClipboard [cbContent]="currentRoute + '/upcoming-launches/' + launch.slug"
+                <button ngxClipboard [cbContent]="currentRoute + '/launch/' + launch.slug"
                     type="button" (click)=onCopy($event)>Share</button>
             </div>
         </div>
