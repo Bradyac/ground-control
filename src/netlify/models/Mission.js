@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const MissionSchema = Schema({
-  _id: Schema.Types.ObjectId,
+  _id: Number,
   name: {
     type: String,
   },

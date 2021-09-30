@@ -21,10 +21,10 @@ const LaunchSchema = Schema({
   watch_url: {
     type: String,
   },
-  rocket: { type: Schema.Types.ObjectId, ref: "Rockets" },
-  mission: { type: Schema.Types.ObjectId, ref: "Missions" },
-  pad: { type: Schema.Types.ObjectId, ref: "Pads" },
-  provider: { type: Schema.Types.ObjectId, ref: "Providers" },
+  rocket: { type: Number, ref: "Rockets" },
+  mission: { type: Number, ref: "Missions" },
+  pad: { type: Number, ref: "Pads" },
+  provider: { type: Number, ref: "Providers" },
 });
 
 module.exports = mongoose.model("Launches", LaunchSchema);

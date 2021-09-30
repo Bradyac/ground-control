@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const PadSchema = Schema({
-  _id: Schema.Types.ObjectId,
+  _id: Number,
   location_name: {
     type: String,
   },
