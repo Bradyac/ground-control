@@ -12,7 +12,7 @@ export class LaunchCardComponent {
   status: string[];
 
   constructor() {
-    this.currentRoute = window.location.href;
+    this.currentRoute = window.location.hostname;
   }
 
   ngOnInit() {

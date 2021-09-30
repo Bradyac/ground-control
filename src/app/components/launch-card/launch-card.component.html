@@ -1,26 +1,25 @@
-<section class="launch flex">
+<section *ngIf="launch" class="launch flex">
     <div class="card">
-        <div class="image" [ngStyle]="{'background-image': 'url(' + launch?.image_url +')'}" style="background-position: center;
+        <div class="image" [ngStyle]="{'background-image': 'url(' + launch.image_url +')'}" style="background-position: center;
             background-size: cover;"></div>
         <div class="text-container">
-            <div class="pill" [ngStyle]="{'background-color': 'var(' + launch?.status[1] + ')'}" alt="launch status">{{ launch?.status[0] }}</div>
-            <h1 class="launch-title">{{ launch?.name }}</h1>
-            <h2 class="launch-date">{{ launch?.date.toLocaleString()
+            <div class="pill" [ngStyle]="{'background-color': 'var(' + launch.status[1] + ')'}" alt="launch status">{{ launch.status[0] }}</div>
+            <h1 class="launch-title">{{ launch.name }}</h1>
+            <h2 class="launch-date">{{ launch.date.toLocaleString()
                 }}</h2>
-            <app-countdown-timer [launchDate]=launch?.date></app-countdown-timer>
+            <app-countdown-timer [launchDate]=launch.date></app-countdown-timer>
             <div class="launch-button-row">
-                <a *ngIf="launch?.watch_url" href="{{ launch.watch_url
+                <a *ngIf="launch.watch_url" href="{{ launch.watch_url
                     }}">
                     <button type="button">Watch</button>
                 </a>
-                <button *ngIf="!launch?.watch_url" type="button"
+                <button *ngIf="!launch.watch_url" type="button"
                     style="background-color: #999; color: #ccc; cursor:
                     not-allowed;">No Video</button>
-                <a href="upcoming-launches/{{ launch?.slug }}">
+                <a href="upcoming-launches/{{ launch.slug }}">
                     <button type="button">More Info</button>
                 </a>
-                <button ngxClipboard [cbContent]="currentRoute + '/' +
-                    launch?.slug"
+                <button ngxClipboard [cbContent]="currentRoute + '/upcoming-launches/' + launch.slug"
                     type="button" (click)=onCopy($event)>Share</button>
             </div>
         </div>

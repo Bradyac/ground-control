@@ -118,6 +118,7 @@
 
 .video-player {
   border-radius: 30px;
+  width: 100%;
 }
 
 .video-player,
