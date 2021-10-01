@@ -17,7 +17,7 @@ export class UpcomingLaunchService {
 
   // get list of upcoming launches to disaplay on upcoming-launches page
   getUpcomingLaunches(): Observable<Launch[]> {
-    return this.http.get<any[]>('.netlify/functions/upcoming-launches').pipe(
+    return this.http.get<any[]>('.netlify/functions/launches').pipe(
       map((response) => {
         let launches: Launch[] = [];
         response.forEach((data) => {
@@ -136,7 +136,7 @@ export class UpcomingLaunchService {
         status = ['SUCCESS', '--success-color'];
         break;
       case 4:
-        status = ['FAIL', '--error-color'];
+        status = ['FAILURE', '--error-color'];
         break;
       case 6:
         status = ['IN FLIGHT', '--secondary-color'];

@@ -12,7 +12,7 @@ mongoose.connect(process.env.DB_CONNECTION, {
 });
 
 // Routes
-const ArticlesRoute = require("./articles-routes");
+const ArticlesRoute = require("./articles-router");
 
 // Middleware
 app.use(cors({ origin: "*" }));

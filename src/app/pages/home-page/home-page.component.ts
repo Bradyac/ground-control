@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Article } from 'src/app/interfaces/article';
 import { Launch } from 'src/app/interfaces/launch';
 import { ArticlesService } from 'src/app/services/articles-service/articles.service';
-import { UpcomingLaunchService } from 'src/app/services/upcoming-launch-service/upcoming-launch.service';
+import { UpcomingLaunchService } from 'src/app/services/launch-service/launch.service';
 
 @Component({
   selector: 'app-home-page',

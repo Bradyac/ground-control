@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { UpcomingLaunchService } from './upcoming-launch.service';
+import { UpcomingLaunchService } from './launch.service';
 
 describe('UpcomingLaunchService', () => {
   let service: UpcomingLaunchService;

@@ -10,7 +10,7 @@ const LaunchSchema = Schema({
     type: Number,
   },
   date: {
-    type: String,
+    type: Date,
   },
   slug: {
     type: String,
