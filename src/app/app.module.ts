@@ -13,6 +13,7 @@ import { LaunchPageComponent } from './pages/launch-page/launch-page.component';
 import { ClipboardModule } from 'ngx-clipboard';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     ClipboardModule,
     HttpClientModule,
     NgxPaginationModule,
+    InfiniteScrollModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

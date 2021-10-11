@@ -1,7 +1,17 @@
 <section class="upcoming-launches">
     <h1 class="header-text">Upcoming Launches</h1>
-    <div *ngIf="!launches">
-        <div *ngFor="let i of [].constructor(10)" class="loading-card"></div>
+    <div class="radio-toolbar">
+        <input type="radio" id="radioApple" name="radioFruit" value=true checked (change)="toggleLaunchType($event.target.value)">
+        <label for="radioApple">Upcoming</label>
+
+        <input type="radio" id="radioBanana" name="radioFruit" value=false (change)="toggleLaunchType($event.target.value)">
+        <label for="radioBanana">Previous</label>
     </div>
-    <app-launch-card class="light" *ngFor="let l of launches" [launch]=l></app-launch-card>
+    <div
+        infinite-scroll
+        [infiniteScrollDistance]="distance"
+        (scrolled)="onScroll()">
+        <app-launch-card class="light" *ngFor="let l of launches" [launch]=l></app-launch-card>
+    </div>
+    <div *ngIf="!fetchedAll" class="loading-card"></div>
 </section>

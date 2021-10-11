@@ -16,11 +16,13 @@ export class UpcomingLaunchService {
   constructor(private http: HttpClient, private sanitizer: DomSanitizer) {}
 
   // get list of upcoming launches to disaplay on upcoming-launches page
-  getUpcomingLaunches(): Observable<Launch[]> {
-    return this.http.get<any[]>('.netlify/functions/launches').pipe(
+  getUpcomingLaunches(query: string = ''): Observable<any> {
+    let url = '.netlify/functions/launches' + query;
+    return this.http.get<any>(url).pipe(
       map((response) => {
+        let totalLaunches: number = response.collectionSize;
         let launches: Launch[] = [];
-        response.forEach((data) => {
+        response.launches.forEach((data) => {
           let launch: Launch = {
             _id: data._id,
             name: data.name,
@@ -34,7 +36,7 @@ export class UpcomingLaunchService {
           };
           launches.push(launch);
         });
-        return launches;
+        return { totalLaunches, launches };
       })
     );
   }

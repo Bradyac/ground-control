@@ -11,31 +11,38 @@ router.get("/", async (req, res) => {
     // Server side pagination
     let { page, size, upcoming } = req.query;
     let p = page || 1;
-    let s = size || 10;
-    let fetchUpcoming = upcoming || true;
+    let s = size || 5;
+    let fetchUpcoming = upcoming || "true";
 
     // For selecting a subset of launches in the collection
     // Ex. The user is on the second page and each page shows 10 launches: page = 2, size = 10 -> selects launches from 11-20
     const limit = parseInt(s);
     const skip = (p - 1) * s;
 
-    // Get total size of collection for client side pagination
-    let collectionSize = await Launch.countDocuments();
-
     // 1 hour ago - Upcoming Launches = launched/failed within the past hour or will launch in the future | Past Launches = launched/failed over 1 hour ago
     const d = new Date();
     d.setHours(d.getHours() - 1);
 
+    // Get total size of collection so we can know when to stop infinite scroll on the client side
+    let collectionSize;
+
     // Get a list of launches
     // fetch upcoming launches else fetch past launches
     let launches;
-    if (fetchUpcoming === true) {
-      console.log("here");
+    if (fetchUpcoming === "true") {
+      collectionSize = await Launch.find({
+        date: { $gt: d },
+      }).countDocuments();
+
       launches = await Launch.find({ date: { $gt: d } })
         .sort({ date: 1 })
         .skip(skip)
         .limit(limit);
     } else {
+      collectionSize = await Launch.find({
+        date: { $lte: d },
+      }).countDocuments();
+
       launches = await Launch.find({ date: { $lte: d } })
         .sort({ date: 1 })
         .skip(skip)
