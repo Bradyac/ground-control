@@ -2,7 +2,10 @@ const Launch = require("../models/Launch");
 const router = require("express").Router();
 
 router.get("/next", (req, res) => {
-  Launch.find()
+  const d = new Date();
+  d.setHours(d.getHours() - 1);
+
+  Launch.find({ date: { $gt: d } })
     .sort({ date: 1 })
     .limit(1)
     .exec((err, results) => {
