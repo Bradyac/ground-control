@@ -1,11 +1,12 @@
 <section class="upcoming-launches">
     <h1 class="header-text">Launches</h1>
     <div class="radio-toolbar">
-        <input type="radio" id="upcoming-radio-button" value=true checked (change)="toggleLaunchType($event.target.value)">
-        <label for="upcoming-radio-button">Upcoming</label>
+        <input type="radio" id="upcoming-launches-rb" name="radioLaunchTypes" value=true checked
+            (change)="toggleLaunchType($event.target.value)">
+        <label for="upcoming-launches-rb">Upcoming</label>
 
-        <input type="radio" name="previous-radio-button" value=false (change)="toggleLaunchType($event.target.value)">
-        <label for="previous-radio-button">Previous</label>
+        <input type="radio" id="previous-launches-rb" name="radioLaunchTypes" value=false (change)="toggleLaunchType($event.target.value)">
+        <label for="previous-launches-rb">Previous</label>
     </div>
     <div
         infinite-scroll
