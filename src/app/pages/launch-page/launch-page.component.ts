@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Launch } from 'src/app/interfaces/launch';
-import { UpcomingLaunchService } from 'src/app/services/launch-service/launch.service';
+import { LaunchService } from 'src/app/services/launch-service/launch.service';
 
 @Component({
   selector: 'app-launch-page',
@@ -13,7 +13,7 @@ export class LaunchPageComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private upcomingLaunchService: UpcomingLaunchService
+    private upcomingLaunchService: LaunchService
   ) {}
 
   ngOnInit(): void {

@@ -12,11 +12,11 @@ import { DomSanitizer } from '@angular/platform-browser';
 @Injectable({
   providedIn: 'root',
 })
-export class UpcomingLaunchService {
+export class LaunchService {
   constructor(private http: HttpClient, private sanitizer: DomSanitizer) {}
 
-  // get list of upcoming launches to disaplay on upcoming-launches page
-  getUpcomingLaunches(query: string = ''): Observable<any> {
+  // get list of launches (upcoming/previous) to display on the launches-page
+  getLaunches(query: string = ''): Observable<any> {
     let url = '.netlify/functions/launches' + query;
     return this.http.get<any>(url).pipe(
       map((response) => {
@@ -41,7 +41,7 @@ export class UpcomingLaunchService {
     );
   }
 
-  // get selected launch to display on upcoming-launch page
+  // get the expanded launch information for a selected launch to display on the launch-page
   getUpcomingLaunch(slug: string): Observable<Launch> {
     return this.http.get<any>('.netlify/functions/launch/' + slug).pipe(
       map((response) => {
@@ -105,6 +105,7 @@ export class UpcomingLaunchService {
     );
   }
 
+  // get the next upcoming launch to display on the home-page
   getNextLaunch(): Observable<Launch> {
     return this.http.get<any>('.netlify/functions/launch/next').pipe(
       map((response) => {
@@ -125,6 +126,7 @@ export class UpcomingLaunchService {
     );
   }
 
+  // Convert number status code to an array that contains the status message (string) and status colour (css variable)
   assignStatus(status_code: number): string[] {
     let status = [];
     switch (status_code) {

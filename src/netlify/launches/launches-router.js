@@ -5,7 +5,16 @@ require("../models/Provider");
 const Launch = require("../models/Launch");
 const router = require("express").Router();
 
-// Get all upcoming launches
+// Get launches
+/* upcoming: { true: fetch upcoming launches} || { false: fetch previous launches }
+   A launch is considered upcoming if it has launched within the past hour or will launch in the future
+*/
+/*
+  Server side pagination
+  p (page): This number represents the current page the user is on
+  s (size):
+*/
+
 router.get("/", async (req, res) => {
   try {
     // Server side pagination

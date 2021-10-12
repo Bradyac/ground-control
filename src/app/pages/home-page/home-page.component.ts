@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Article } from 'src/app/interfaces/article';
 import { Launch } from 'src/app/interfaces/launch';
 import { ArticlesService } from 'src/app/services/articles-service/articles.service';
-import { UpcomingLaunchService } from 'src/app/services/launch-service/launch.service';
+import { LaunchService } from 'src/app/services/launch-service/launch.service';
 
 @Component({
   selector: 'app-home-page',
@@ -15,7 +15,7 @@ export class HomePageComponent implements OnInit {
   page: number = 1;
 
   constructor(
-    private upcomingLaunchService: UpcomingLaunchService,
+    private upcomingLaunchService: LaunchService,
     private articlesService: ArticlesService
   ) {}
 
