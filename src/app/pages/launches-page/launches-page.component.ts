@@ -39,6 +39,7 @@ export class LaunchesPageComponent implements OnInit {
     this.upcomingLaunchService
       .getLaunches('?page=' + this.page + '&upcoming=' + this.upcoming)
       .subscribe((data) => {
+        this.totalLaunches = data.totalLaunches;
         this.launches = [];
         data.launches.forEach((launch) => {
           this.launches.push(launch);
@@ -56,6 +57,7 @@ export class LaunchesPageComponent implements OnInit {
       this.upcomingLaunchService
         .getLaunches('?page=' + this.page + '&upcoming=' + this.upcoming)
         .subscribe((data) => {
+          this.totalLaunches = data.totalLaunches;
           data.launches.forEach((launch) => {
             this.launches.push(launch);
           });
