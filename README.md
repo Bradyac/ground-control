@@ -1,4 +1,9 @@
 # GroundControl
+A simple single page application that tracks rocket launches/space articles from around the world using an external public API.
+This web app makes use of Angular, TS/JS, HTML, CSS, MongoDB Atlas, Mongoose, Netlify (Hosting/Serverless Functions using Node/Express), Heroku (Hosting/Scheduler) and other npm packages.
+
+The code found in this repository is for the front-end Angular portion of the project as well as the serverless back-end portion using Netlify Functions.
+At the moment there is another repository for the back-end data fetching portion of the web application. This is the code that fetches new data (launches/articles) from the external public API and stores it in the NoSQL (MongoDB Atlas) database to be used by the front-end.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.0.
 
