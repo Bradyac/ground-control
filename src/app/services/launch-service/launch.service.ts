@@ -145,6 +145,9 @@ export class LaunchService {
       case 6:
         status = ['IN FLIGHT', '--secondary-color'];
         break;
+      case 8:
+        status = ['TBC', '--warning-color'];
+        break;
       default:
         status = ['N/A', '--default-color'];
         break;
